@@ -9,7 +9,7 @@ This `python3` script leverages the [Kandji](https://kandji.io) and [Snipe-IT](h
 ## Overview:
 kandji2snipe is designed to sync assets between your Kandji and Snipe-IT instances. The tool searches for assets based on the serial number, not the existing asset tag. If assets exist in Kandji and are not in Snipe-IT, the tool will create an asset and try to match it with an existing Snipe-IT model. This match is based on the device's model identifier (ex. MacBookAir7,1) being entered as the model number in Snipe-IT, rather than the model name. If a matching model isn't found, it will create one.
 
-When an asset is first created, it will fill out only the most basic information ($$DEFINE WHICH BASIC INFO HERE). If the asset already exists in your Snipe-IT inventory, the tool will sync the information you specify in the settings.conf file and make sure that the asset tag in Kandji matches the asset tag in Snipe-IT, where Snipe-IT's asset tag for that device is considered the authority.
+When an asset is first created, it will fill out only the most basic information. If the asset already exists in your Snipe-IT inventory, the tool will sync the information you specify in the settings.conf file and make sure that the asset tag in Kandji matches the asset tag in Snipe-IT, where Snipe-IT's asset tag for that device is considered the authority.
 
 If the asset tag field is blank in Kandji when the record is being created in Snipe-IT, the script will create an asset tag with `KANDJI-$SERIAL_NUMBER` unless you enable `use_custom_pattern` in your `settings.conf` file.
 
@@ -87,7 +87,7 @@ Note: do not add `""` or `''` around any values.
   
 ### API Mapping
 
-To get the database fields for Snipe-IT Custom Fields, go to Custom Fields inside of your Snipe-IT instance, scroll down past Fieldsets to Custom Fields, click the column selection and button and make sure the 'DB Field' checkbox is checked. Copy and paste the DB Field name for Snipe-IT under *platform*-api-mapping sections in your `settings.conf` file.
+To get the database fields for Snipe-IT Custom Fields, go to Settings and then Custom Fields inside of your Snipe-IT instance, scroll down past Fieldsets to Custom Fields, click the column selection button and make sure the 'DB Field' checkbox is checked. Copy and paste the DB Field name for Snipe-IT under *platform*-api-mapping sections in your `settings.conf` file.
 
 To get the API mapping fields for Kandji, refer to Kandji's [Device Details](https://api-docs.kandji.io/#e320f334-d7d4-4c15-b75d-bc956b2943d5) API example response.
 
